@@ -1,0 +1,65 @@
+{
+  "_comment": "「我关注什么」的可执行版本。brief.py 用它给当天条目打分、排序、并过滤掉不看的类别。改这里就能改每天收到什么，不用改代码。",
+  "limit": 5,
+  "sections": {
+    "insights": { "max": 3, "weight": 1.0 },
+    "papers": { "max": 2, "weight": 1.15 },
+    "github": { "max": 1, "weight": 0.9 }
+  },
+  "include": [
+    {
+      "id": "agent-engineering",
+      "label_zh": "Agent 工程",
+      "label_en": "Agent engineering",
+      "weight": 1.25,
+      "keywords": ["harness", "上下文", "context", "编排", "orchestration", "工具调用", "tool use",
+                  "memory", "记忆", "评测", "eval", "benchmark", "agent", "mcp", "rag", "检索",
+                  "subagent", "多智能体", "multi-agent", "prompt", "推理", "reasoning"]
+    },
+    {
+      "id": "robotics",
+      "label_zh": "机器人与具身智能",
+      "label_en": "Robotics and embodied AI",
+      "weight": 1.25,
+      "keywords": ["机器人", "robot", "具身", "embodied", "vla", "视觉语言动作", "仿真", "simulation",
+                  "world model", "世界模型", "导航", "navigation", "抓取", "manipulation", "真机",
+                  "sim2real", "灵巧手", "dexterous", "locomotion", "运动控制", "点云", "slam"]
+    },
+    {
+      "id": "ai-productivity",
+      "label_zh": "AI 提效",
+      "label_en": "AI productivity",
+      "weight": 0.95,
+      "keywords": ["工作流", "workflow", "自动化", "automation", "提效", "productivity", "代码助手",
+                  "coding agent", "ide", "插件", "skill", "技能", "本地", "local-first"]
+    },
+    {
+      "id": "model-labs",
+      "label_zh": "模型与实验室动向（技术向）",
+      "label_en": "Model and lab moves (technical)",
+      "weight": 0.85,
+      "keywords": ["模型", "model", "发布", "release", "开源", "open source", "训练", "training",
+                  "推理成本", "inference", "post-training", "蒸馏", "distill", "量化", "quantization",
+                  "多模态", "multimodal", "论文", "paper", "arxiv", "openai", "anthropic", "deepseek",
+                  "qwen", "gemini", "llama", "moe", "注意力", "attention", "架构", "architecture"]
+    }
+  ],
+  "_override_comment": "出现这些「方法/工件名」时，即使标题里有排除词也不过滤：它们几乎一定是技术内容（例如「MCP 争议」里的 MCP、「融资」包装下的 benchmark 论文）。这里故意不放『机器人』『模型』这类领域名词，否则融资新闻会因为提到机器人而被救回来。",
+  "override_keywords": [
+    "mcp", "harness", "vla", "benchmark", "评测集", "数据集", "arxiv", "论文", "开源",
+    "sim2real", "世界模型", "world model", "蒸馏", "强化学习", "rl", "量化", "推理框架",
+    "agent 框架", "上下文工程", "context engineering", "工具调用", "tool use"
+  ],
+  "exclude": [
+    { "id": "funding", "label_zh": "融资与估值", "label_en": "Funding and valuation",
+      "patterns": ["融资", "估值", "独角兽", "ipo", "上市", "股价", "市值", "亿元", "亿美元", "轮融资", "领投"] },
+    { "id": "personnel", "label_zh": "人事变动", "label_en": "Personnel",
+      "patterns": ["任命", "离职", "加入", "辞任", "ceo 变动", "跳槽", "招聘"] },
+    { "id": "politics", "label_zh": "政治与政策表态", "label_en": "Politics and policy",
+      "patterns": ["特朗普", "白宫", "国会", "总统", "制裁", "关税", "选举", "政府", "监管机构", "立法"] },
+    { "id": "social-controversy", "label_zh": "社会争议与法律事件", "label_en": "Social controversy and legal",
+      "patterns": ["警方", "起诉", "诉讼", "重罪", "丑闻", "性虐待", "儿童", "自杀", "争议", "抗议"] },
+    { "id": "opinion-noise", "label_zh": "名人言论与口水战", "label_en": "Hot takes",
+      "patterns": ["altman 说", "马斯克", "口水", "怒斥", "回怼", "宗教", "不安", "炮轰", "炮轰", "骂"] }
+  ]
+}

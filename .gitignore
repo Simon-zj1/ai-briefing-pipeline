@@ -1,0 +1,16 @@
+# 渲染产物（由 render_site.py 生成，Hexo 构建时复制进 public/）
+site/
+
+# 每日抓取快照：约 350KB/天，含第三方原文片段，不入库
+data/raw/
+
+# 中间产物与草稿
+_backup/
+_leftover_from_site_repo/
+_refs_*.json
+_groups_*.json
+
+# Python / macOS
+**/__pycache__/
+*.pyc
+.DS_Store
